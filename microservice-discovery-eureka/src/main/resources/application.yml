@@ -1,0 +1,11 @@
+server:
+  port: 8761
+eureka:
+  client:
+    register-with-eureka: false   #是否将自己注册到 Eureka Server，因为本身是 server 所以不用， 默认为true
+    fetch-registry: false  # 单节点 Eureka Server 所以不用获取注册信息
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: microservice-eureka

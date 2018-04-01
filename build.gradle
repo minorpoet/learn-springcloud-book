@@ -1,0 +1,16 @@
+group 'pri.holysu.springcloud'
+version '1.0-SNAPSHOT'
+
+allprojects{
+    repositories{
+        mavenLocal()
+        maven{url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        mavenCentral()
+    }
+
+}
+
+subprojects{
+
+}
+

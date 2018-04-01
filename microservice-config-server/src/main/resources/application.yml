@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: microservice-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/minorpoet/spring-cloud-config-repo.git
+          username: minorpoet
+          password: yanmark_520
+        health: # 通过url  xx/health/microservice-foo-dev/master 查看配置健康状况
+          repositories:
+            microservice-foo:
+              label: config-label-v2.0
+              name: microservice-foo
+              profiles: dev
+
+logging:
+  level:
+    org.springframework.cloud: debug
+    org.springframework.boot: debug

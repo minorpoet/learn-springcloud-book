@@ -1,0 +1,7 @@
+ext {
+    versions = {
+        springBootVersion = '1.5.10.RELEASE'
+        springCloudVersion = 'Edgware.SR2'
+
+    }
+}

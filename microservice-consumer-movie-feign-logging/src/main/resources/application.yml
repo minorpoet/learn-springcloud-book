@@ -1,0 +1,16 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: microservice-consumer-movie
+eureka:
+  client:
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    instance:
+      prefer-ip-address: true
+      instance-id: ${spring.application.name}:${server.port}
+logging:
+  level:
+     pri.holysu.springcloud.microserviceconsumermoviefeignlogging.client: DEBUG

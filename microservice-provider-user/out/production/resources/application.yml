@@ -1,0 +1,28 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: microservice-provider-user  # 指定 Eureka Server 上的应用名称，消费者就可以通过 @FeignClient(name="microservice-provider-user")来调用
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:                     # 指定数据源
+    platform: h2                  # 指定数据源类型
+    schema: classpath:schema.sql  # 指定h2数据库的建表脚本
+    data: classpath:data.sql      # 指定h2数据库的数脚本
+
+logging:
+  level:
+    root: info
+    org.hibernate: info
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.hibernate.type.descriptor.sql.BasicExtractor: trace
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    instance:
+      prefer-ip-address: true

@@ -1,0 +1,47 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.10.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'pri.holysu.springcloud'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+	// eureka 客户端依赖 这里边已经包含 ribbon 的依赖不用在单独依赖
+	compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+
+	// compile('org.springframework.cloud:spring-cloud-starter-ribbon')
+
+	// feign
+	compile('org.springframework.cloud:spring-cloud-starter-feign')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+ext {
+	springCloudVersion = 'Edgware.SR2'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
