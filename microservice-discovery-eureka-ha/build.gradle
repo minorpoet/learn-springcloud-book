@@ -18,11 +18,6 @@ group = 'pri.holysu.springcloud'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
-repositories {
-	mavenCentral()
-	maven { url "https://repo.spring.io/milestone" }
-}
-
 
 ext {
 	springCloudVersion = 'Edgware.SR2'

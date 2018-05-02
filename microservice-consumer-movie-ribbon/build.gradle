@@ -19,11 +19,6 @@ group = 'pri.holysu.springcloud'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
-repositories {
-	mavenCentral()
-}
-
-
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	// eureka 客户端依赖 这里边已经包含 ribbon 的依赖不用在单独依赖
