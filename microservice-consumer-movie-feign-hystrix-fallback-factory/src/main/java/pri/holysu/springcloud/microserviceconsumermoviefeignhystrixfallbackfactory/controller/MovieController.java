@@ -36,6 +36,15 @@ public class MovieController {
         return user;
     }
 
+    /**
+     * 带回退机制的 feign 调用
+     * @return
+     */
+    @GetMapping("/user/all")
+    public List<User> findAll(){
+        return feignUserClient.findAll();
+    }
+
     @GetMapping("/serverinfo")
     public List<ServiceInstance> getServiceInfo() {
         return this.discoveryClient.getInstances("microservice-provider-user");

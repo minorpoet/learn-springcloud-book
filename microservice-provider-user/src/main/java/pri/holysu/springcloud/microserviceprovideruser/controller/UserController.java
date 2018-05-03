@@ -9,6 +9,7 @@ import pri.holysu.springcloud.microserviceprovideruser.entity.User;
 import pri.holysu.springcloud.microserviceprovideruser.repository.UserRepository;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/user")
@@ -20,6 +21,11 @@ public class UserController {
     @GetMapping("/{id}")
     public User findById(@PathVariable Long id){
         User found = this.userRepository.findOne(id);
+//        try {
+//           TimeUnit.SECONDS.sleep(10);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         return found;
     }
 

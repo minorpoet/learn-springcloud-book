@@ -14,6 +14,7 @@ import pri.holysu.springcloud.microserviceconsumermovieribbonhystrix.entity.User
 @RestController
 public class MovieController {
     private static final String SERVER_HOST = "microservice-provider-user";
+   // private static final String SERVER_HOST = "localhost:8000";
     private static Logger LOGGER = LoggerFactory.getLogger(MovieController.class);
 
     @Autowired

@@ -1,26 +1,17 @@
 spring:
   application:
-    name: cat_api
+    name: microservice-foo # 对应 config server 所获取的配置文件的 {application}
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+
   cloud:
     config:
-      label: dev
+      # uri: http://localhost:8080/
+      profile: dev # 对应 config server 所获取配置文件的 {profile}
+      label: master
       discovery:
         enabled: true
-        service-id: pay-cloud-config-service
-    bus:
-      enabled: true
-    stream:
-          default-binder: kafka
-          kafka:
-            binder:
-              brokers: 10.0.19.71,10.0.19.72,10.0.19.73
-              zkNodes: 10.0.19.71,10.0.19.72,10.0.19.73
-              defaultZkPort: 2181
-              defaultBrokerPort: 9092
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://winpos:wRTL1iJZEZw0PT2o@10.0.19.71:7001/eureka,http://winpos:wRTL1iJZEZw0PT2o@10.0.19.72:7001/eureka
-management:
-  security:
-    enabled: false
+        service-id: microservice-config-server # 对应注册到 eureka 的 config Server应用名称
