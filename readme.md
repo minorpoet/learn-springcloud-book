@@ -259,11 +259,11 @@ turbine:
 启动：
 1. microservice-discovery-eureka
 2. microservice-provider-user
-3. microservice-consumer-movie
+3. microservice-consumer-movie-ribbon-hystrix
 4. microservice-consumer-movie-feign-hystrix-fallback-stream
 5. microservice-hystrix-dashboard
 6. microservice-hystrix-turbine
-然后访问 http://localhost:8081/user/1 , http://localhost:8020/user/1 产生数据
+然后访问 http://localhost:8010/user/1 , http://localhost:8020/user/1 产生数据
 
 再打开 hystrix dashboard首页 http://localhost:8030/hystrix.stream 填入 http://localhost:8031/turbine.stream 查看聚合监控
 

@@ -13,3 +13,6 @@ turbine:
   # 监控以下两个服务
   app-config: microservice-consumer-movie,microservice-consumer-movie-feign-hystrix-fallback-stream
   cluster-name-expression: "'default'"
+  aggregator:
+    cluster-config: default
+  clusterNameExpression: new String("default")
